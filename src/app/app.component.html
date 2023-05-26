@@ -1,35 +1,9 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Recipe Book</a>
-    <button (click)="toggleNavbarCollapsing()" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div [ngbCollapse]="navbarCollapsed" class="navbar-collapse " id="navbarSupportedContent">
-      <ul class="navbar-nav clearfix mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Recipes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Shopping</a>
-        </li>
-        <div ngbDropdown class="nav-item me-5">
-          <a ngbDropdownToggle class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Manage</a>
-          <ul ngbDropdownMenu class="dropdown-menu w-25">
-            <li><a ngbDropdownItem class="dropdown-item" href="#">Save Data</a></li>
-            <li><a ngbDropdownItem class="dropdown-item" href="#">Fetch Data</a></li>
-          </ul>
-        </div>
-      </ul>
-    </div>
-  </div>
-</nav>
+<app-header (featureSelected)="onNavigate($event)"></app-header>
 <div class="row">
   <div class="col-xs-12">
-    <app-recipes></app-recipes>
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-12 ">
-    <app-shopping-list class="align-items-center justify-content-center"></app-shopping-list>
+	<app-recipes *ngIf="loadedFeature === 'recipes'"></app-recipes>
+  <app-shopping-list *ngIf="loadedFeature !== 'recipes'"
+	  class="align-items-center justify-content-center"
+	></app-shopping-list>
   </div>
 </div>

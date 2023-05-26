@@ -5,11 +5,15 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'RecipePlanner';
-  navbarCollapsed = true;
+  loadedFeature = 'recipes';
 
-  toggleNavbarCollapsing() {
-    this.navbarCollapsed = !this.navbarCollapsed;
+  onNavigate(event: string) {
+    this.loadedFeature = event;
+  }
+
+  ngOnInit() {
+
   }
 }

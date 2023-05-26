@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-xs-10">
-        <app-shopping-edit></app-shopping-edit>
+        <app-shopping-edit (ingredientAdded)="onIngredientAdded($event)" (ingredientRemoved)="onIngredientRemoved()"></app-shopping-edit>
         <hr>
         <ul class="list-group w-25 ms-5">
             <a class="list-group-item" style="cursor: pointer;" *ngFor="let ingredient of ingredients">

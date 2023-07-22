@@ -6,14 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'RecipePlanner';
-  loadedFeature = 'recipes';
+    title = 'RecipePlanner';
 
-  onNavigate(event: string) {
-    this.loadedFeature = event;
-  }
+    ngOnInit() {
 
-  ngOnInit() {
+    }
 
-  }
 }
